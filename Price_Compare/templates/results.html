@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results for {{ query }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Results for "{{ query }}"</h1>
+        <div class="results-container">
+            <div class="platform">
+                <h2>Amazon</h2>
+                {% if amazon_products %}
+                    {% for product in amazon_products %}
+                        <div class="product">
+                            <h3>{{ product.title }}</h3>
+                            <p>Price: ₹{{ product.price }}</p>
+                            <a href="{{ product.link }}" target="_blank">View Product</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No products found on Amazon</p>
+                {% endif %}
+            </div>
+            
+            <div class="platform">
+                <h2>Flipkart</h2>
+                {% if flipkart_products %}
+                    {% for product in flipkart_products %}
+                        <div class="product">
+                            <h3>{{ product.title }}</h3>
+                            <p>Price: {{ product.price }}</p>
+                            <a href="{{ product.link }}" target="_blank">View Product</a>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No products found on Flipkart</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html> 
