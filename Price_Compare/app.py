@@ -93,7 +93,7 @@ def scrape_flipkart(query):
                     })
             except Exception as e:
                 continue
-    return products[:5]
+    return products[:7]
 
 @app.route('/')
 def index():
