@@ -1,0 +1,1 @@
+Developed a web scraping application using Python and Flask to extract data from public websites. The project involved creating a Flask API to handle web scraping tasks, storing the scraped data in a database, and displaying it on a user-friendly web interface.
